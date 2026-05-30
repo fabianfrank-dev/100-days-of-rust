@@ -17,7 +17,7 @@ fn startup_event() -> i32{
     println!("You can quit at any time by pressing CTRL + C");
     println!("Enter your guess");
 
-    return random
+    random
 }
 
 fn get_guess() -> String{
@@ -29,7 +29,7 @@ fn get_guess() -> String{
         .read_line(&mut guess)
         .expect("Failed to read line");
 
-    return guess
+    guess
 
 }
 
@@ -40,19 +40,28 @@ fn check_guess(random: i32){
     loop {
         // get guess from user and parse into integer
         let guess_str: String = get_guess();
-        let guess_i32: i32 = guess_str.trim().parse().unwrap();
+        let guess_i32: i32 = match guess_str.trim().parse(){
+            Ok(num) => num, 
+            Err(_) => {
+                println!("Please enter a valid Value");
+                continue;
+            }
+        };
         
         // increase guess count
         guess_amount += 1;
         
         // check if guess is higher, lower or is the random number
-        if guess_i32 > random{
-            println!("The Number you chose is higher than mine! Number of guesses: {}", guess_amount);
-        } else if guess_i32 < random{
-            println!("The Number you chose is lower than mine! Number of guesses: {}", guess_amount);
-        } else{
-            println!("Congratulations! {} was the correct number! You took {} guesses.", random, guess_amount);
-            break
+        match guess_i32.cmp(&random){
+            std::cmp::Ordering::Greater => println!("The number you chose is higher than mine! Guesses: {}", guess_amount),
+            std::cmp::Ordering::Less => println!("The number you chose is lower than mine! Guesses: {}", guess_amount),
+            std::cmp::Ordering::Equal => {
+                println!("Congratulations! {} was the correct number! Number of guesses: {}", random, guess_amount);
+                break;
+            }
         }
     }
+
 }
+
+    
