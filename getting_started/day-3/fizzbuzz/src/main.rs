@@ -45,19 +45,11 @@ fn get_check_number(){
         let mod_5: i32 = number_i32 % 5;
         
         // check for divisible by 3 or 5
-        match mod_3 == mod_5 && mod_5 == 0{
-            true => println!("FizzBuzz"),
-            false => {
-                match mod_3{
-                    0 => println!("Fizz"),
-                    _ => {
-                        match mod_5{
-                            0 => println!("Buzz"),
-                            _ => println!("Inconclusive")
-                        }
-                    }
-                }
-            }
+        match (mod_3, mod_5){
+            (0, 0) => println!("FizzBuzz"),
+            (0, mod_5) => println!("Fizz"),
+            (mod_3, 0) => println!("Buzz"),
+            _ => println!("Inconclusive")
         }
 
     }
