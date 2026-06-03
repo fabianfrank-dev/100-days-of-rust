@@ -10,8 +10,11 @@ This repository documents my progress as I learn Rust by building small projects
 - **Day 1**: Basics (Hello World, User Input, Calculator, Even/Odd, Loop)
 - **Day 2**: Games (Even/Odd Game, Guessing Game)
 - **Day 3**: Logic & Conversions (FizzBuzz, Temperature Converter)
+- **Day 4**: Structs, Enums & CLI Args (User Struct, Rooms, W-name Filter)
+- **Day 5**: State & Collections (Inventory, Mini Notepad)
+- **Day 6**: Traits, Generics & Libraries (Point Math, Currency Conversion, `rand`)
 
-*Current streak: 3/100 days*
+*Current streak: 6/100 days*
 
 ---
 
@@ -26,4 +29,3 @@ This repository documents my progress as I learn Rust by building small projects
 Each day has its own folder with:
 - A `README.md` summarizing projects and learnings.
 - Rust scripts or projects in subdirectories.
-
