@@ -49,7 +49,6 @@ fn main(){
 fn create_file(filename: String) -> std::io::Result<File> {
     // create file
     let path: String = format!("notes/{}.txt", filename);
-    println!("{}", path);
     let file: std::io::Result<File> = File::create(path);
 
     // return file
