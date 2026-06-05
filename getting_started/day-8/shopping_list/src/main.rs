@@ -2,7 +2,7 @@ use std::io;
 use std::fs::File;
 use std::io::Write;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 struct Products{
     item: String,
     amount: u32
@@ -49,17 +49,37 @@ fn add(products: &mut Vec<Products>){
         println!("Got it! Added {} instances of {} to the list!", u32_am, item);
         // insert product into list
         let product = Products{
-            item: item,
+            item: item.trim().to_string(),
             amount: u32_am
         };
         products.push(product);
        break;
        }
-    }
+}
 
 fn delete_from(products: &mut Vec<Products>){
+        // initialise new input variables
+    let mut item: String = String::new();
+
+     // check for valid u32 values until it's fulfilled
+    println!("Which item would you like to remove?");
+
+    io::stdin()
+        .read_line(&mut item)
+        .expect("Failed to read line");
     
-}
+    let index = products.iter().position(|p| p.item == item.trim());
+
+    match index{
+        Some(index) => {
+            println!("Successfully removed {} from list", item.trim());
+            products.remove(index);
+        }
+        _ => {
+            println!("Couldn't find product");
+        }
+    }
+ }
 
 fn print_to_file(products: &Vec<Products>) -> std::io::Result<()>{
     let mut file: File = File::create("shopping_list.txt")?;
@@ -68,7 +88,7 @@ fn print_to_file(products: &Vec<Products>) -> std::io::Result<()>{
         writeln!(&mut file, "{} {}", product.amount, product.item)?;
     }   
 
-
+    println!("File was successfully created!");
     Ok(())
 }
 
@@ -84,6 +104,7 @@ fn user_decision(){
         println!("Hello there, what would you like to do?");
         println!("1 - Add product to the list");
         println!("2 - View list");
+        println!("3 - Delete entry");
         println!("4 - Print to file");
         println!("Press CTRL + C");
 
@@ -106,6 +127,9 @@ fn user_decision(){
             }
             2 =>{
                 view(&vec);
+            }
+            3 =>{
+                delete_from(&mut vec);
             }
             4 =>{
                 let _ = print_to_file(&vec);
