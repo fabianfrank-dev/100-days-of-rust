@@ -20,7 +20,7 @@ fn generate_password() -> String {
 
         password.push(character);
     }
-
+    password.encrypt(password);
     password
 }
 
