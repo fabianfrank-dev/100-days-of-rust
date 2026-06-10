@@ -1,6 +1,6 @@
-# Day 6: Day 6
+# Day 9: Day 9
 
-This module covers fundamental concepts learned during **6**. The primary goal was to solidify understanding of Rust features required for this stage of learning.
+This module covers fundamental concepts learned during **9**. The primary goal was to solidify understanding of Rust features required for this stage of learning.
 
 ## 🎯 Projects Implemented
 - [Project A]: Briefly describe what the project does and which concepts it utilizes.

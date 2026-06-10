@@ -1,18 +1,18 @@
-# Day 4: Structs, Enums & CLI Args
+# Day 4: Day 4
 
-## Projects
-- **Structs**: Created a `User` struct with fields for name, age, and height.
-- **Enums**: Modeled different room types with enum variants and matched on them.
-- **Assignment**: Read command-line arguments and greeted names beginning with `W` or `w`.
+This module covers fundamental concepts learned during **4**. The primary goal was to solidify understanding of Rust features required for this stage of learning.
 
-## Learnings
-✅ Defining structs with named fields
-✅ Adding methods with `impl`
-✅ Borrowing with `&self`, mutable borrowing with `&mut self`, and consuming values with `self`
-✅ Creating enum variants with attached data
-✅ Using `match` and `if let` for control flow
-✅ Reading CLI arguments with `std::env::args`
+## 🎯 Projects Implemented
+- [Project A]: Briefly describe what the project does and which concepts it utilizes.
+- [Project B]: Describe a secondary challenge or application built.
+*Goal: Fill this section with concrete projects completed.*
 
-## Challenges
-- **Ownership in methods**: Practiced when to borrow, mutate, or consume a value.
-- **Pattern matching**: Used matches to handle enum variants and character checks.
+## ✨ Key Learnings & Concepts
+✅ **[Concept 1]**: Detailed explanation of the concept (e.g., Ownership, Trait bounds). How does it work? Why is it important in Rust?
+✅ **[Concept 2]**: Explanation of a more advanced topic covered here.
+✅ **[Concept 3]**: Note any specific library usage or complex syntax mastered.
+*Goal: List 3-4 distinct technical learnings.*
+
+## 🚧 Challenges & Next Steps
+- [Challenge Area]: Describe the most difficult part to grasp (e.g., lifetime elision, complex error handling).
+- [Improvement Idea]: What would be a good feature addition or concept to explore next?
